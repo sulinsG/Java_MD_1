@@ -12,20 +12,21 @@ public class Teacher extends Employee {
     }
 
     public void setTeachingLevel(TeachingLevel teachingLevel) {
+        if(teachingLevel != null)
         this.teachingLevel = teachingLevel;
+        else
+        this.teachingLevel = TeachingLevel.PRESCHOOL;
     }
 
-    public Teacher(Date contractDate,TeachingLevel teachingLevel) {
+    public Teacher() {
         super();
-        setTeachingLevel(teachingLevel);
+        setTeachingLevel(TeachingLevel.PRESCHOOL);
     }
     
     public Teacher(String name, String surname, String personalCode, Date contractDate, TeachingLevel teachingLevel)
     {
         super(name,surname,personalCode, contractDate);
         setTeachingLevel(teachingLevel);
-
-
     }
 
     @Override
