@@ -42,7 +42,7 @@ public class Employee extends Person {
     }
 
 
-    public void setContractNumber(String contractNumber) {
+    public void setContractNumber() {
 
         //substring funkcija pienem 2 argumentus - sakuma indeksu un beigu indeksu, atgriez attiecigos String elementus
         //https://reactgo.com/java-get-first-character-of-string/
@@ -57,16 +57,16 @@ public class Employee extends Person {
     {
         super();
         setEmployeeId();
-        setContractDate();
         setContractNumber();
+        setContractDate(new Date(2022,3,23));
     }
 
-    public Employee(Date contractDate, String contractNumber)
+    public Employee(String name, String surname, String personalCode, Date contractDate)
     {
-        super();
+        super(name,surname,personalCode);
         setEmployeeId();
+        setContractNumber();
         setContractDate(contractDate);
-        setContractNumber(contractNumber);
     }
 
     @Override
