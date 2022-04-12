@@ -29,10 +29,13 @@ public class Teacher extends Employee {
         setTeachingLevel(teachingLevel);
     }
 
+
+
     @Override
     public String toString() {
         return "{" +
-            " teachingLevel='" + getTeachingLevel() + "'" +
+        super.getName() + "_" + super.getSurname() + "_" + super.getPersonalCode()+ "_" +
+            " teachingLevel='" + getTeachingLevel() + "'" + getEmployeeId() + "_" +
             "}";
     }
 

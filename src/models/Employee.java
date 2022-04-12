@@ -46,10 +46,11 @@ public class Employee extends Person {
 
         //substring funkcija pienem 2 argumentus - sakuma indeksu un beigu indeksu, atgriez attiecigos String elementus
         //https://reactgo.com/java-get-first-character-of-string/
-        this.contractNumber = (checkingDate.getYear() +
+        this.contractNumber = (checkingDate.
+        getYear() +
                 "_" + employeeId +
-                "_" + person.getName().substring(0,1) +
-                "_" + person.getSurname().substring(0,1));
+                "_" + super.getName().substring(0,1) +
+                "_" + super.getSurname().substring(0,1));
 
     }
 

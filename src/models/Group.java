@@ -25,7 +25,7 @@ public class Group extends Child {
     }
 
     public void setGroupStartYear(short groupStartYear) {
-        if(groupStartYear >= 2022 && groupStartYear <= 2023)
+        if(groupStartYear >= 2021 && groupStartYear <= 2023)
         this.groupStartYear = groupStartYear;
         else
         this.groupStartYear = 0;
@@ -58,12 +58,14 @@ public class Group extends Child {
         super();
         setTitle("Nezinīši");
         setGroupStartYear((short)0);
+        setTeacher(new Teacher());
     }
 
-    public Group(short groupStartYear, String title) {
+    public Group (String title, short groupStartYear,Teacher teacher) {
         super();
-        setTitle("Nezinīši");
-        setGroupStartYear((short)0);
+        setTitle(title);
+        setGroupStartYear(groupStartYear);
+        setTeacher(teacher);
     }
 
 
@@ -89,14 +91,19 @@ public class Group extends Child {
         return false;
     }
     
+
+
     @Override
     public String toString() {
         return "{" +
             " groupStartYear='" + getGroupStartYear() + "'" +
             ", title='" + getTitle() + "'" +
+            ", allChildrenInGroup='" + getAllChildrenInGroup() + "'" +
+            ", teacher='" + getTeacher() + "'" +
             "}";
     }
 
     
     
 }
+ 

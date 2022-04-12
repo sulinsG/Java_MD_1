@@ -1,6 +1,6 @@
 package models;
 
-public class Child extends Person {
+public class Child extends Person implements Comparable<Child>{
     private String allergies;
     private int priorityForSpeechLessons;
     private Nationality nationality;
@@ -56,12 +56,17 @@ public class Child extends Person {
     @Override
     public String toString() {
         return "{" +
+        super.getName() + "_" + super.getSurname() + "_" + super.getPersonalCode()+ "_" +
             " allergies='" + getAllergies() + "'" +
             ", priorityForSpeechLessons='" + getPriorityForSpeechLessons() + "'" +
             "}";
     }
 
-    
+    public int compareTo(Child child)
+    {
+        return this.getPriorityForSpeechLessons() - child.getPriorityForSpeechLessons();
+    }
+
 
     
 }
